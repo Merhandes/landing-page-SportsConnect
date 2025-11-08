@@ -1,0 +1,658 @@
+:root {
+  --primary-blue: #0066d9;
+  --white: #ffffff;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  padding-top: 74px;
+  background: #f7f7f7;
+  position: relative;
+  z-index: 0;
+}
+
+/* Overlay background image with 30% opacity */
+body::before {
+  content: "";
+  position: fixed; /* or absolute if you prefer */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("assets/img/BG.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.3; /* 30% opacity */
+  z-index: -1;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0.1rem;
+  background: linear-gradient(90deg, #0062e6 0%, #33aeff 100%);
+  box-shadow: 0 2px 8px rgba(51, 174, 255, 0.08);
+}
+
+nav .logo img {
+  height: 40px;
+  padding: 3px;
+}
+
+nav .logo {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-left: 1.5rem;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: 1.5rem;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.logo-title {
+  color: #fff;
+  font-size: 1.35rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  align-items: center;
+  margin-left: auto;
+}
+
+nav ul li {
+  margin: 0 0.5rem;
+}
+
+nav ul li a {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5em 0.9em;
+  border-radius: 8px;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* Hero Section */
+.hero {
+  max-width: 980px;
+  padding: 2rem 3rem 3rem 3rem;
+  background: linear-gradient(100deg, #ffffff 70%, #e8f2fc 100%);
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+/* Buttons */
+
+.btn {
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: none;
+}
+
+/* Tombol utama (biru solid) */
+.btn-primary {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  border: 2px solid var(--primary-blue);
+}
+
+.btn-primary:hover {
+  background-color: #0052a3;
+  transform: translateY(-1px);
+}
+
+/* Tombol outline (putih dengan garis biru) */
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary-blue);
+  border: 2px solid var(--primary-blue);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
+/* Ukuran besar */
+.btn-large {
+  padding: 16px 36px;
+  font-size: 1.05rem;
+}
+
+/* Container tombol */
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.hero-image {
+  max-width: 350px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  height: auto;
+}
+
+.carousel-container {
+  width: 100%;
+  max-width: 980px;
+  margin: 2rem auto;
+  position: relative;
+  background: #eef7fa;
+  border-radius: 20px;
+  padding: 2rem 3rem 3rem 3rem;
+}
+
+.carousel-slide {
+  display: flex;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px 0 #bbb;
+}
+
+.carousel-img {
+  min-width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  background: #d7e9f5;
+  border-radius: 17px;
+  transition: all 0.5s cubic-bezier(0.62, 0.28, 0.23, 0.99);
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.carousel-dot {
+  width: 13px;
+  height: 13px;
+  margin: 0 5px;
+  background: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.carousel-dot.active {
+  background: #2273c0;
+}
+
+.carousel-btn.left {
+  left: 8px;
+}
+
+.carousel-btn.right {
+  right: 8px;
+}
+
+section {
+  margin: 2rem auto;
+  max-width: 1000px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px #ddd;
+  padding: 2rem;
+}
+
+h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+#products {
+  background: linear-gradient(100deg, #ffffff 70%, #e8f2fc 100%);
+  border-radius: 18px;
+  box-shadow: 0 6px 24px #b7d7ff50;
+  margin-bottom: 2rem;
+  padding: 2rem 2.8rem;
+}
+
+#products h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  letter-spacing: 1.5px;
+}
+
+#products p {
+  font-size: 1.08rem;
+  color: #335;
+  letter-spacing: 0.2px;
+}
+
+.process-section {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.process-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* === OUR KEY STRENGTHS === */
+.key-strengths {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.key-strengths h3 {
+  color: var(--text-dark);
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+
+/* GRID CARD */
+.strengths-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+/* CARD STYLE */
+.strength-card {
+  background: #ffffff;
+  border: 2px solid transparent;
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba(0, 102, 217, 0.08);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.strength-card:hover {
+  border-color: #0066d9;
+  box-shadow: 0 8px 24px rgba(0, 102, 217, 0.2);
+  transform: translateY(-6px);
+}
+
+/* ICON */
+.strength-icon {
+  font-size: 2.4rem;
+  color: #0066d9;
+  margin-bottom: 1rem;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.strength-card:hover .strength-icon {
+  transform: scale(1.1);
+}
+
+/* TITLE & TEXT */
+.strength-card h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0052a3;
+  margin-bottom: 0.6rem;
+}
+
+.strength-card p {
+  color: #505267;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* SECTION WRAPPER: batasi lebar & center */
+#about {
+  background: linear-gradient(120deg, #ffffff 60%, #f0eaff 100%);
+  border-radius: 18px;
+  box-shadow: 0 6px 24px #c3b7ff35;
+  padding: 2rem 3rem;
+  /* rapikan margin dobel: gabungkan jadi satu baris */
+  margin: 3rem auto 2.5rem;
+}
+
+/* batasi lebar konten agar tidak terlalu melebar di desktop */
+#about .about-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ABOUT: gunakan grid agar simetris & stabil */
+.about-container {
+  display: grid;
+  grid-template-columns: 180px 1fr; /* kolom logo & teks */
+  align-items: center;
+  gap: 2rem 2.2rem;
+  margin-bottom: 2.25rem; /* sedikit lebih rapat agar konsisten */
+}
+
+/* gambar terkendali & tidak mengubah warna */
+.about-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-image img {
+  width: 160px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(34, 115, 192, 0.3);
+}
+
+/* teks: panjang baris nyaman dibaca */
+.about-text {
+  flex: 1;
+  max-width: 64ch; /* batasi panjang paragraf */
+}
+.about-text h2 {
+  font-weight: 700;
+  margin: 0 0 0.75rem 0; /* hilangkan margin-top */
+  font-size: 2rem;
+  line-height: 1.2;
+}
+.about-text p {
+  color: #444;
+  font-size: 1.1rem;
+  line-height: 1.65;
+  letter-spacing: 0.2px;
+  margin: 0; /* rapikan margin p */
+}
+
+/* VISI MISI GRID: rata & jarak konsisten */
+.visi-misi {
+  margin-top: 3rem;
+  text-align: center;
+}
+.visi-misi h3 {
+  color: #0066d9;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+
+/* rapikan grid & center-kan di dalam section */
+.visi-misi-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 1.5rem; /* sedikit lebih rapat dari 2rem agar menyatu */
+  max-width: 720px;
+  margin: 0 auto 0;
+}
+
+/* card tetap sama gaya warnanya, hanya spacing/transition rapi */
+.visi-misi-card {
+  background: #ffffff;
+  border: 2px solid transparent;
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba(0, 102, 217, 0.08);
+  padding: 1.75rem 1.5rem; /* kurangi padding vertikal sedikit agar proporsional */
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+.visi-misi-card:hover {
+  border-color: #0066d9;
+  box-shadow: 0 8px 24px rgba(0, 102, 217, 0.25);
+  transform: translateY(-6px);
+}
+.visi-misi-icon {
+  font-size: 2.4rem;
+  color: #0066d9;
+  margin-bottom: 0.9rem; /* selaraskan jarak dengan h4 */
+  display: block;
+  transition: transform 0.25s ease;
+}
+.visi-misi-card:hover .visi-misi-icon {
+  transform: scale(1.08);
+}
+
+.visi-misi-card h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0052a3;
+  margin: 0 0 0.5rem 0;
+}
+.visi-misi-card p {
+  color: #505267;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Section Utama */
+.testimoni-section {
+  text-align: center;
+
+  padding: 80px 20px;
+  background: linear-gradient(to bottom right, #f9fafb, #e9eff5);
+  font-family: "Poppins", sans-serif;
+}
+
+.testimoni-section h2 {
+  font-size: 2em;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+}
+
+.testimoni-section h2::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 3px;
+  background-color: #007bff;
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* Container Grid */
+.testimoni-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Card Testimoni */
+.testimoni-card {
+  background-color: #fff;
+  padding: 25px 20px 35px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimoni-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.testimoni-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 3px solid #007bff;
+}
+
+.testimoni-card p {
+  font-style: italic;
+  color: #555;
+  font-size: 0.95em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.testimoni-card h4 {
+  color: #007bff;
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 1.2rem 0;
+  background: linear-gradient(100deg, #18406e 60%, #29aafe 100%);
+  color: #fff;
+  font-size: 1.08rem;
+  border-top: 3px solid #29aafe;
+  font-weight: 500;
+  min-height: 48px;
+  letter-spacing: 0.5px;
+}
+
+.footer span:before {
+  margin-right: 7px;
+}
+
+.footer span:nth-child(1):before {
+  content: "📍";
+}
+
+.footer span:nth-child(2):before {
+  content: "📧";
+}
+
+.footer span:nth-child(3):before {
+  content: "☎️";
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .testimoni-section h2 {
+    font-size: 1.8em;
+  }
+
+  .testimoni-card img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimoni-section {
+    padding: 60px 15px;
+  }
+  .testimoni-card {
+    padding: 20px;
+  }
+}
+
+.testimoni-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+}
+
+.testimoni-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.testimoni-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.testimoni-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
