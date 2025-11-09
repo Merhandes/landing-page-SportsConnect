@@ -148,6 +148,7 @@ nav ul li a:hover {
   cursor: pointer;
   transition: all 0.25s ease;
   border: none;
+  text-decoration: none;
 }
 
 /* Tombol utama (biru solid) */
