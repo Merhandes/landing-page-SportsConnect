@@ -147,7 +147,8 @@ nav ul li a:hover {
   font-weight: 700;
   cursor: pointer;
   transition: all 0.25s ease;
-  text-decoration: none;
+  text-decoration: none !important;
+  display: inline-block;
   
 }
 
