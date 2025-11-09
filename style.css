@@ -163,11 +163,10 @@ nav ul li a:hover {
   transform: translateY(-1px);
 }
 
-/* Tombol outline (putih dengan garis biru) */
 .btn-outline {
   background-color: transparent;
   color: var(--primary-blue);
-  border: none;
+  border: 2px solid var(--primary-blue);
 }
 
 .btn-outline:hover {
